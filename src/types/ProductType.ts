@@ -1,8 +1,26 @@
 export type ProductType = {
     id: number;
     title: string;
-    price: number | null;
-    description: string | null;
+    slug: string;
+    price: number;
+    short_description:  string;
+    description: string;
     image: string;
-    category: string;
+    brand: string;
+    model: string;
+    colors: Array<string>;
+    defaultCategory: {nome: string, image: string};
+    categories: Array<string>;
+    quantity: number;
+    status: string;
+    created_at: Date;
+    updated_at: null | Date;
+    deleted_at: null | Date;
+    height: number;
+    width: number;
+    length: number;
+    weight: number;
+    material: string;
+    country: string;
+    products_related: Array<number>;
 }

@@ -1,13 +1,15 @@
-import Image from 'next/image';
-import { ProductType } from '@/types/ProductType';
-import Product from './components/Product';
+
+import { ProductType } from '../types/ProductType';
+import Product from '../components/Product';
+import { productsFake } from '../lib/Products';
 
 async function getProducts(){
-  const res = await fetch('https://fakestoreapi.com/products')
-  if(!res.ok){
-    throw new Error("Failed to fetch products")
-  }
-  return  res.json();
+  // const res = await fetch('https://fakestoreapi.com/products')
+  // if(!res.ok){
+  //   throw new Error("Failed to fetch products")
+  // }
+  // return  res.json();
+  return productsFake;
 }
 
 export default async function Home(){

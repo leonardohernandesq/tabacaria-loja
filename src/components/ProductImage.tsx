@@ -1,6 +1,6 @@
 'use client'
 
-import { ProductType } from '@/types/ProductType';
+import { ProductType } from '../types/ProductType';
 import Image from 'next/image'
 import { useState } from 'react';
 
@@ -17,7 +17,7 @@ export default function ProductImage({ product, fill }: ProductImageProps) {
             fill
             alt={product.title}
             className={`object-cover ${loading ? 'scale-110 blur-sm grayscale' : 'scale-100 blur-0 grayscale-0'}`}
-            onLoadingComplete={() => setLoading(false)}
+            onLoad={() => setLoading(false)}
         />
     ) : (
         <Image 
@@ -26,7 +26,7 @@ export default function ProductImage({ product, fill }: ProductImageProps) {
         height={700}
         alt={product.title}
         className={`object-cover ${loading ? 'scale-110 blur-3xl grayscale' : 'scale-100 blur-0 grayscale-0'}`}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
     />
     )
 }
